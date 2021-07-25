@@ -1,0 +1,39 @@
+<div class="row container" style="margin-top: 4em;">
+    <div class="col-md-4 mx-auto">
+        <h2>Sign in</h2>
+        <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" id="email" class="form-control" formControlName="email">
+                <span *ngIf="formControls.email.touched && formControls.email.invalid" class="error">please insert an email</span>
+
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" class="form-control" formControlName="password">
+                <span *ngIf="formControls.password.touched && formControls.password.hasError('required')" class="error">please insert the password </span>
+                <span *ngIf="formControls.password.touched && formControls.password.hasError('pattern')" class="error">the password should contain at less 6 caracter </span>
+
+
+            </div>
+
+            <button type="submit" [disabled]="signInForm.invalid" class="btn btn-primary btn-block">Confirm</button>
+                <div class="col-md-12">
+                    <div class="login-or">
+                        <hr class="hr-or">
+                        <span class="span-or"> or </span>
+                    </div>
+                </div>
+            <button type="button" (click)="signInWithGoogle()"  class="btn btn-danger btn-block"> Sign in via Gmail
+            </button>
+
+            
+            
+
+            
+
+        </form>
+        <a style="color: black;" [routerLink]="'/signup'">Create Account</a>
+    </div>
+</div>

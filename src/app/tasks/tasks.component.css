@@ -1,0 +1,19 @@
+.tasklist{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+
+
+.barre{
+    text-decoration: line-through;
+    
+}
+
+.desc{
+    width: 100%;
+}
+
+

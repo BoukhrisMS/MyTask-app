@@ -1,0 +1,45 @@
+<div class="tasklist">
+
+    <div class="row container" style="margin: 1em;" >
+        <div class="col-sm-6 col-sm-pffset-2">
+    <button type="button" [routerLink]="['/add'] " class="btn btn-danger"> Add Task</button>
+</div></div>
+
+
+<table class="table table-striped table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Title</th>
+            <th scope="col" colspan="4">Description</th>
+            
+        </tr>
+    </thead>
+    
+    <tbody>
+        
+     <!--
+
+         <tr *ngFor="let task of tasks" >
+             <td  *ngIf="task.user==currentUser.email"  [ngClass]="{'barre': task.state==true}">{{task.title}}</td>
+            <td *ngIf="task.user==currentUser.email" [ngClass]="{'barre': task.state==true}" class="desc" >{{task.description}}</td>
+            <td> <button *ngIf="task.user==currentUser.email" type="button" [routerLink]="['/edit',task.id]" class="btn btn-info">update</button></td>
+            <td> <button *ngIf="task.user==currentUser.email" type="button" (click)="deleteTask(task.id)" style="margin-left: 1em" class="btn btn-danger">Delete</button></td>
+            <td> <button *ngIf="task.user==currentUser.email" type="button" (click)="completeTask(task.id)" style="margin-left: 1em" class="btn btn-success">Done</button></td>
+            
+        </tr>
+    -->
+    <tr *ngFor="let task of tasks" >
+        <td    [ngClass]="{'barre': task.state==true}">{{task.title}}</td>
+        <td [ngClass]="{'barre': task.state==true}" class="desc" >{{task.description}}</td>
+        <td> <button  type="button" [routerLink]="['/edit',task.id]" class="btn btn-info">update</button></td>
+        <td> <button  type="button" (click)="deleteTask(task.id)" style="margin-left: 1em" class="btn btn-danger">Delete</button></td>
+        <td> <button  type="button" (click)="completeTask(task.id)" style="margin-left: 1em" class="btn btn-success">Done</button></td>
+        
+    </tr>
+    </tbody>
+</table>
+
+</div>
+
+
+

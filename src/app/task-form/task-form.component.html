@@ -1,0 +1,23 @@
+<div class="row container">
+    <div class="col-sm-6 col-sm-offset-2">
+        <ng-container [ngSwitch]="action">
+            <h2 *ngSwitchCase="'add'">Add New Task</h2>
+            <h2 *ngSwitchCase="'edit'">Edit Task</h2>
+
+        </ng-container>
+        <form [formGroup]="taskForm" (ngSubmit)="onSaveTask()" >
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" id="title" class="form-control" formControlName="title">
+                <span *ngIf="formControls.title.touched && formControls.title.invalid" class="error">please insert the name task</span>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea  id="description" class="form-control" formControlName="description"></textarea>
+            </div>
+            
+            <button class="btn btn-success" [disabled]="taskForm.invalid" type="submit">Save</button>
+        </form>
+    </div>
+</div>

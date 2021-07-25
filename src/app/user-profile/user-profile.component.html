@@ -1,0 +1,13 @@
+<div class="row">
+    <div>
+      <div class="border-bottom text-center pb-4">
+          <img [src]="user.photoURL || 'https://bootdey.com/img/Content/avatar/avatar1.png'"  alt="profile" class="img-md rounded-circle mb-3" style="height: 170px;">
+          <div class="mb-3">
+              <h3>{{user?.displayName}}</h3>
+              <h3>{{user?.email}}</h3>
+          </div>
+          <button type="button" (click)="signOut()" class="btn btn-danger"> Disconnect</button>
+      </div>  
+    </div>
+</div>
+
